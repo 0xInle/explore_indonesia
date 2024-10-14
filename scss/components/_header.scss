@@ -85,10 +85,6 @@
     &-count {
       pointer-events: all;
     }
-
-    // &-current, .swiper-pagination-current {
-
-    // }
   }
 
   &__slide {
@@ -173,4 +169,25 @@
       opacity: 0.5;
     }
   }
+
+  &__scrollbar {
+    position: absolute;
+    // z-index: 10;
+    right: 0;
+    top: 50%;
+    transform: rotate(-90deg) translate(50%, -100%);
+    pointer-events: all;
+    height: 2px;
+    transform-origin: right top;
+    border-radius: 0;
+    background-color: var(--white-color);
+  }
+}
+
+.swiper-scrollbar-drag {
+  background-color: #DD2242 !important;
+}
+
+.swiper-scrollbar-horizontal {
+  width: 200px;
 }
