@@ -13,8 +13,8 @@ const swiper = new Swiper('.swiper', {
   },
 
   navigation: {
-    nextEl: '.headerNext',
-    prevEl: '.headerPrev',
+    nextEl: '#headerNext',
+    prevEl: '#headerPrev',
   },
 
   scrollbar: {

@@ -84,6 +84,12 @@
 
     &-count {
       pointer-events: all;
+      font-size: 30px;
+    }
+
+    &-arrows {
+      justify-content: space-between;
+      // margin-bottom: 20px;
     }
   }
 
@@ -93,11 +99,6 @@
     height: 100vh;
     overflow: hidden;
     padding-bottom: 30px;
-    background: linear-gradient(192.53deg, rgba(0, 0, 0, 0.31) 29.671%, rgba(0, 0, 0, 0.29) 84.194%), url(../img/header-bg.jpg);
-    background-color: #555;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
     cursor: grab;
     text-align: center;
     align-items: center;
@@ -108,6 +109,41 @@
 
     &::before {
       content: '';
+    }
+
+    &-bg--1 {
+      background: linear-gradient(192.53deg, rgba(0, 0, 0, 0.31) 29.671%, rgba(0, 0, 0, 0.29) 84.194%), url(../img/header-bg-1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &-bg--2 {
+      background: linear-gradient(192.53deg, rgba(0, 0, 0, 0.31) 29.671%, rgba(0, 0, 0, 0.29) 84.194%), url(../img/header-bg-2.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &-bg--3 {
+      background: linear-gradient(192.53deg, rgba(0, 0, 0, 0.31) 29.671%, rgba(0, 0, 0, 0.29) 84.194%), url(../img/header-bg-3.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &-bg--4 {
+      background: linear-gradient(192.53deg, rgba(0, 0, 0, 0.31) 29.671%, rgba(0, 0, 0, 0.29) 84.194%), url(../img/header-bg-4.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &-bg--5 {
+      background: linear-gradient(192.53deg, rgba(0, 0, 0, 0.31) 29.671%, rgba(0, 0, 0, 0.29) 84.194%), url(../img/header-bg-5.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
     }
   }
 
@@ -182,6 +218,37 @@
     border-radius: 0;
     background-color: var(--white-color);
   }
+
+  &__arrow {
+    width: 18px;
+    height: 18px;
+
+    &--left {
+      margin-right: 10px;
+    }
+
+    &--right {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__burger-svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--white-color);
+  }
+
+  &__search-svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--white-color);
+    margin-right: 40px;
+  }
+
+  &__button-box {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .swiper-scrollbar-drag {
@@ -190,4 +257,12 @@
 
 .swiper-scrollbar-horizontal {
   width: 200px;
+}
+
+.swiper-pagination-current {
+  font-size: 21px;
+}
+
+.swiper-pagination-total {
+  font-size: 42px;
 }
