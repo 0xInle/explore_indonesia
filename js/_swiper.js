@@ -107,50 +107,66 @@ const swiper = new Swiper('.swiper', {
 // updateSlider(currentSlide);
 
 const slidesContainer = document.querySelector('.reserv__slides');
-const slides = document.querySelectorAll('.reserv__slide');
+const slides = Array.from(document.querySelectorAll('.reserv__slide'));
 const dots = document.querySelectorAll('.reserv__dot');
 
-let currentSlide = 0;
 const slideWidth = 440; // ширина одного слайда включая gap
+const visibleSlides = 3; // количество отображаемых слайдов
+let currentSlide = visibleSlides; // Начинаем со смещением на клоны
 const totalSlides = slides.length;
+let isTransitioning = false; // Блокировка перехода
+
+// Создаем клоны первых и последних слайдов
+const clonesBefore = slides.slice(-visibleSlides).map(slide => slide.cloneNode(true));
+const clonesAfter = slides.slice(0, visibleSlides).map(slide => slide.cloneNode(true));
+
+// Добавляем клоны в начало и конец контейнера
+clonesBefore.forEach(clone => slidesContainer.prepend(clone));
+clonesAfter.forEach(clone => slidesContainer.append(clone));
+
+// Обновляем общее количество слайдов с учетом клонов
+const allSlides = document.querySelectorAll('.reserv__slide');
+const totalSlidesWithClones = allSlides.length;
 
 function updateSlider(index, instant = false) {
-    // Смещение к началу (перевести на первый слайд после последнего)
-    if (index === totalSlides) {
-        slidesContainer.style.transition = 'none';
-        slidesContainer.style.transform = 'translateX(0px)';
-        currentSlide = 0;
-        setTimeout(() => updateSlider(currentSlide), 20); // Сначала обновляем без анимации
-    } 
-    // Смещение к концу (перевести на последний слайд после первого)
-    else if (index === -1) {
-        slidesContainer.style.transition = 'none';
-        slidesContainer.style.transform = `translateX(${-slideWidth * (totalSlides - 1)}px)`;
-        currentSlide = totalSlides - 1;
-        setTimeout(() => updateSlider(currentSlide), 20);
-    } 
-    // Обычное обновление для центральных слайдов
-    else {
-        const offset = -index * slideWidth;
-        slidesContainer.style.transition = instant ? 'none' : 'transform 0.5s ease-in-out';
-        slidesContainer.style.transform = `translateX(${offset}px)`;
+    const offset = -index * slideWidth;
+    slidesContainer.style.transition = instant ? 'none' : 'transform 0.5s ease-in-out';
+    slidesContainer.style.transform = `translateX(${offset}px)`;
 
-        // Обновляем индикаторы
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[index % totalSlides].classList.add('active');
+    // Обновляем индикаторы
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index % totalSlides].classList.add('active');
+}
+
+function checkLoop() {
+    if (currentSlide >= totalSlides + visibleSlides) {
+        currentSlide = visibleSlides;
+        slidesContainer.style.transition = 'none';
+        slidesContainer.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+    } else if (currentSlide < visibleSlides) {
+        currentSlide = totalSlides;
+        slidesContainer.style.transition = 'none';
+        slidesContainer.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
     }
+    setTimeout(() => (isTransitioning = false), 20); // Снимаем блокировку после проверки
 }
 
 // Переход к следующему слайду
 function moveToNextSlide() {
+    if (isTransitioning) return;
+    isTransitioning = true;
     currentSlide++;
     updateSlider(currentSlide);
+    setTimeout(checkLoop, 500); // Добавляем небольшую задержку перед проверкой
 }
 
 // Переход к предыдущему слайду
 function moveToPrevSlide() {
+    if (isTransitioning) return;
+    isTransitioning = true;
     currentSlide--;
     updateSlider(currentSlide);
+    setTimeout(checkLoop, 500); // Добавляем небольшую задержку перед проверкой
 }
 
 // Слушатели для клавиш
@@ -162,10 +178,13 @@ document.addEventListener('keydown', (event) => {
 // Навигация по индикаторам
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-        currentSlide = index;
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentSlide = index + visibleSlides;
         updateSlider(currentSlide);
+        setTimeout(() => (isTransitioning = false), 500); // Снимаем блокировку после анимации
     });
 });
 
 // Инициализация слайдера
-updateSlider(currentSlide);
+updateSlider(currentSlide, true); // Переход без анимации на начальные слайды
