@@ -36,6 +36,10 @@
     &:not(:last-child) {
       margin-right: 36px;
     }
+
+    &-social {
+      height: 24px;
+    }
   }
 
   &__link {
@@ -43,13 +47,6 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
-
-    &-social {
-      color: var(--white-color);
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 28px; 
-    }
   }
 
   &__authorship {
@@ -67,5 +64,15 @@
     &:not(:last-child) {
       margin-right: 25px;
     }
+  }
+
+  &__icon-social {
+    fill: var(--white-color);
+    width: 24px;
+    height: 24px;
+  }
+
+  &__right {
+    align-items: center;
   }
 }

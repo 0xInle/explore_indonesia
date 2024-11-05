@@ -92,6 +92,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
   }
   
   .reserv__slide--bg-1 { background-image: url(../img/reserv-img-1.jpg); }

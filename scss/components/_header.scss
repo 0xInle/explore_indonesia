@@ -49,6 +49,20 @@
     font-weight: 700;
     line-height: 23px;
     text-transform: uppercase;
+    transition: all .3s ease-in-out;
+
+    &:focus {
+      outline: none;
+      color: var(--red-color)
+    }
+
+    @include hover {
+      color: var(--red-color);
+    }
+
+    &:active {
+      color: var(--white-color);
+    }
   }
 
   &__social {
@@ -68,6 +82,21 @@
       font-size: 16px;
       font-weight: 700;
       line-height: 21x;
+
+      transition: all .3s ease-in-out;
+
+      &:focus {
+        outline: none;
+        color: var(--red-color)
+      }
+  
+      @include hover {
+        color: var(--red-color);
+      }
+  
+      &:active {
+        color: var(--white-color);
+      }
     }
   }
 
@@ -224,6 +253,7 @@
   &__arrow {
     width: 18px;
     height: 18px;
+    transition: all .3s ease-in-out;
 
     &--left {
       margin-right: 10px;
@@ -232,6 +262,27 @@
     &--right {
       transform: rotate(180deg);
     }
+
+    // &:focus {
+    //   outline: none;
+    //   fill: var(--red-color)
+    // }
+
+    // @include hover {
+    //   fill: var(--red-color);
+    //   background-color: red;
+    //   stroke: var(--red-color);
+    // }
+
+    // @include hover {
+    //   svg path {
+    //     fill: var(--red-color);
+    //   }
+    // }
+
+    // &:active {
+    //   fill: var(--white-color);
+    // }
   }
 
   &__burger-svg {
@@ -250,6 +301,28 @@
   &__button-box {
     display: flex;
     align-items: center;
+  }
+
+  &__btn {
+    color: var(--white-color);
+    // transition: all 3s ease-in-out;
+    outline: none;
+
+    &:focus svg path {
+      fill: var(--red-color);
+      transition: all .3s ease-in-out;
+    }
+
+    @include hover {
+      svg path {
+        fill: var(--red-color);
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    &:active svg path {
+      fill: var(--white-color);
+    }
   }
 }
 
