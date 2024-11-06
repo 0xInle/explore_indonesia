@@ -65,7 +65,7 @@
   }
 
   &__btn {
-    max-width: 180px;
+    min-width: 180px;
     padding: 16px 24px;
     color: var(--white-color);
     font-size: 18px;
@@ -73,5 +73,22 @@
     background-color: var(--red-color);
     border-radius: 32px;
     text-align: center;
+    outline: none;
+    transition: all .3s ease-in-out;
+
+    &:focus {
+      background-color: var(--white-color);
+      color: var(--black-color);
+    }
+
+    @include hover {
+      background-color: var(--white-color);
+      color: var(--black-color);
+    }
+
+    &:active {
+      background-color: var(--red-color);
+      color: var(--white-color);
+    }
   }
 }

@@ -65,5 +65,20 @@
     font-weight: 700;
     line-height: 150%;
     background-color: var(--red-color);
+    outline: none;
+    transition: all .3s ease-in-out;
+    
+    &:focus {
+      background-color: var(--black-color);
+    }
+
+    @include hover {
+      background-color: var(--black-color);
+    }
+
+    &:active {
+      color: var(--white-color);
+      background-color: var(--red-color);
+    }
   }
 }
