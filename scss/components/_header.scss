@@ -278,6 +278,7 @@
   }
 
   &__button-box {
+    position: relative;
     display: flex;
     align-items: center;
   }
@@ -300,6 +301,52 @@
 
     &:active svg path {
       fill: var(--white-color);
+    }
+  }
+
+  &__search {
+    outline: none;
+
+    &:focus svg path {
+      fill: var(--red-color);
+      transition: all .3s ease-in-out;
+    }
+
+    @include hover {
+      svg path {
+        fill: var(--red-color);
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    &:active svg path {
+      fill: var(--white-color);
+    }
+  }
+
+  &__search-bar {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    width: 0;
+    transition: width .3s ease-in-out;
+  }
+
+  &__search-input {
+    width: 200px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid var(--white-color);
+    outline: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);;
+    font-size: 12px;
+    font-weight: 400;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
     }
   }
 }

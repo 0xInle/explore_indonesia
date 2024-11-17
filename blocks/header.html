@@ -34,14 +34,21 @@
         </nav>
       </div>
       <div class="header__button-box">
-        <button class="header__search btn-reset">
-          <svg class="header__search-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+        <div class="header__search-bar" id="searchBar" tabindex="-1">
+          <input class="header__search-input" type="text" id="searchInput" tabindex="-1">
+        </div>
+        <button id="searchToggle" class="header__search btn-reset">
+          <svg class="header__search-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px"
+            height="50px">
             <path
               d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z" />
           </svg>
         </button>
         <button class="header__burger btn-reset">
-          <svg class="header__burger-svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg>
+          <svg class="header__burger-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px"
+            height="50px">
+            <path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z" />
+          </svg>
         </button>
       </div>
     </div>
@@ -70,16 +77,22 @@
           <button id="headerPrev" class="header__btn btn-reset">
             <svg class="header__arrow header__arrow--left" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
               <g id="Layer_44" data-name="Layer 44">
-                <path d="m32 62a30 30 0 1 1 30-30 30 30 0 0 1 -30 30zm0-56a26 26 0 1 0 26 26 26 26 0 0 0 -26-26z" fill="currentColor"></path>
-                <path d="m38.84 51.68a2 2 0 0 1 -1.41-.59l-17.68-17.68a2 2 0 0 1 0-2.83l17.67-17.67a2 2 0 0 1 2.83 2.83l-16.25 16.26 16.25 16.26a2 2 0 0 1 -1.41 3.41z" fill="currentColor"></path>
+                <path d="m32 62a30 30 0 1 1 30-30 30 30 0 0 1 -30 30zm0-56a26 26 0 1 0 26 26 26 26 0 0 0 -26-26z"
+                  fill="currentColor"></path>
+                <path
+                  d="m38.84 51.68a2 2 0 0 1 -1.41-.59l-17.68-17.68a2 2 0 0 1 0-2.83l17.67-17.67a2 2 0 0 1 2.83 2.83l-16.25 16.26 16.25 16.26a2 2 0 0 1 -1.41 3.41z"
+                  fill="currentColor"></path>
               </g>
             </svg>
           </button>
           <button id="headerNext" class="header__btn btn-reset">
             <svg class="header__arrow header__arrow--right" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
               <g id="Layer_44" data-name="Layer 44">
-                <path d="m32 62a30 30 0 1 1 30-30 30 30 0 0 1 -30 30zm0-56a26 26 0 1 0 26 26 26 26 0 0 0 -26-26z" fill="currentColor"></path>
-                <path d="m38.84 51.68a2 2 0 0 1 -1.41-.59l-17.68-17.68a2 2 0 0 1 0-2.83l17.67-17.67a2 2 0 0 1 2.83 2.83l-16.25 16.26 16.25 16.26a2 2 0 0 1 -1.41 3.41z" fill="currentColor"></path>
+                <path d="m32 62a30 30 0 1 1 30-30 30 30 0 0 1 -30 30zm0-56a26 26 0 1 0 26 26 26 26 0 0 0 -26-26z"
+                  fill="currentColor"></path>
+                <path
+                  d="m38.84 51.68a2 2 0 0 1 -1.41-.59l-17.68-17.68a2 2 0 0 1 0-2.83l17.67-17.67a2 2 0 0 1 2.83 2.83l-16.25 16.26 16.25 16.26a2 2 0 0 1 -1.41 3.41z"
+                  fill="currentColor"></path>
               </g>
             </svg>
           </button>
