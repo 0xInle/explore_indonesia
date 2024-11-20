@@ -20,6 +20,14 @@
     padding: 200px 30px;
     flex-direction: column;
     align-items: center;
+
+    @media (width <=1023px) {
+      padding: 100px 30px;
+    }
+
+    @media (width <=479px) {
+      padding: 40px 29px;
+    }
   }
 
   &__title {
@@ -32,6 +40,10 @@
     line-height: 50px;
     letter-spacing: 0px;
     text-align: center;
+
+    @media (width <=479px) {
+      font-size: 40px;
+    }
   }
 
   &__subtitle {
@@ -53,19 +65,57 @@
   &__list {
     justify-content: space-between;
     width: 96%;
+
+    @media (width <=1023px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      padding-right: 20px;
+
+      @media (width <=1023px) {
+        margin-bottom: 30px;
+        padding-right: 0;
+      }
+    }
+
+    @media (width <=767px) {
+      flex-direction: column;
+    }
   }
 
   &__player {
+    width: 100%;
     margin-bottom: 125px;
     border-radius: 5px;
+
+    @media (max-width <= 1440px) {
+      width: 600px;
+    }
+
+    @media (width <=479px) {
+      margin-bottom: 40px;
+    }
 
     &--sm {
       margin-right: 40px;
       border-radius: 5px;
+
+      @media (width <=767px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
   }
 
   &__descr {
     max-width: 330px;
+
+    @media (width <=767px) {
+      text-align: center;
+    }
   }
 }

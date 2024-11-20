@@ -2,6 +2,7 @@
   height: 100vh;
   position: relative;
   color: var(--white-color);
+  overflow: hidden;
 
   &__content {
     position: absolute;
@@ -21,6 +22,10 @@
   &__logo {
     height: 49px;
 
+    @media (width <=479px) {
+      height: 35px;
+    }
+
     &-text {
       align-items: center;
       color: var(--white-color);
@@ -30,6 +35,10 @@
       line-height: 80.5%;
       letter-spacing: 0.32px;
       text-transform: uppercase;
+
+      @media (width <=479px) {
+        font-size: 16px;
+      }
     }
   }
 
@@ -41,6 +50,10 @@
     font-weight: 700;
     line-height: 2px;
     text-transform: uppercase;
+
+    @media (width <=1023px) {
+      display: none;
+    }
   }
 
   &__link {
@@ -73,6 +86,10 @@
     transform: rotate(-90deg) translate(-25%, 100%);
     transform-origin: left bottom;
 
+    @media (width <=787px) {
+      display: none;
+    }
+
     &-list {
       column-gap: 35px;
     }
@@ -89,11 +106,11 @@
         outline: none;
         color: var(--red-color)
       }
-  
+
       @include hover {
         color: var(--red-color);
       }
-  
+
       &:active {
         color: var(--white-color);
       }
@@ -104,6 +121,10 @@
     position: absolute;
     right: 0;
     bottom: 0;
+
+    @media (width <=787px) {
+      display: none;
+    }
   }
 
   &__counter {
@@ -183,6 +204,10 @@
     font-size: 1.56vw;
     font-weight: 500;
     text-transform: uppercase;
+
+    @media (width <=479px) {
+      font-size: 3.56vw;
+    }
   }
 
   &__title {
@@ -197,11 +222,20 @@
   &__box {
     &-content {
       margin-top: 80px;
+
+      @media (width <=479px) {
+        margin-top: 45px;
+      }
     }
 
     &-location {
       width: 70%;
       column-gap: 30px;
+
+      @media (width <=787px) {
+        flex-direction: column;
+        width: 80%;
+      }
     }
 
     &-link {
@@ -209,6 +243,12 @@
       display: block;
       padding: 30px 30px;
       flex-grow: 1;
+
+      &:not(:last-child) {
+        @media (width <=787px) {
+          margin-bottom: 20px;
+        }
+      }
 
       &::before {
         content: '';
@@ -248,6 +288,10 @@
     transform-origin: right top;
     border-radius: 0;
     background-color: var(--white-color);
+
+    @media (width <=787px) {
+      display: none;
+    }
   }
 
   &__arrow {
@@ -341,12 +385,111 @@
     border-bottom: 1px solid var(--white-color);
     outline: none;
     background-color: transparent;
-    color: rgba(255, 255, 255, 0.7);;
+    color: rgba(255, 255, 255, 0.7);
+    ;
     font-size: 12px;
     font-weight: 400;
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  &__burger {
+    outline: none;
+
+    &:focus svg path {
+      fill: var(--red-color);
+      transition: all .3s ease-in-out;
+    }
+
+    @include hover {
+      svg path {
+        fill: var(--red-color);
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    &:active svg path {
+      fill: var(--white-color);
+    }
+
+    &-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 25%;
+      padding: 43px 30px 75px;
+      z-index: 1000;
+      background: linear-gradient(180deg, rgb(1, 10, 32), rgba(1, 10, 32, 0) 100%);
+      background-color: rgba(1, 10, 32, 0.9);
+      transform: translateX(150%);
+      transition: transform .3s ease-in-out;
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    &-item {
+
+      &:not(:last-child) {
+        margin-bottom: 75px;
+      }
+    }
+
+    &-link {
+      color: var(--white-color);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 23px;
+      text-transform: uppercase;
+      transition: all .3s ease-in-out;
+  
+      &:focus {
+        outline: none;
+        color: var(--red-color)
+      }
+  
+      @include hover {
+        color: var(--red-color);
+      }
+  
+      &:active {
+        color: var(--white-color);
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      top: 43px;
+      right: 30px;
+      outline: none;
+
+      &:focus svg path {
+        fill: var(--red-color);
+        transition: all .3s ease-in-out;
+      }
+  
+      @include hover {
+        svg path {
+          fill: var(--red-color);
+          transition: all .3s ease-in-out;
+        }
+      }
+  
+      &:active svg path {
+        fill: var(--white-color);
+      }
+    }
+
+    &-svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &-svg path {
+      fill: var(--white-color);
     }
   }
 }

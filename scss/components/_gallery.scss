@@ -1,6 +1,14 @@
 .gallery {
   padding: 200px 30px;
 
+  @media (width <=1023px) {
+    padding: 100px 30px;
+  }
+
+  @media (width <=479px) {
+    padding: 40px 29px;
+  }
+
   &__title {
     margin: 0;
     margin-bottom: 40px;
@@ -8,6 +16,15 @@
     font-weight: 700;
     line-height: 150%;
     text-align: center;
+
+    @media (width <=767px) {
+      font-size: 50px;
+    }
+
+    @media (width <=479px) {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
   }
 
   &__subtitle {
@@ -21,6 +38,11 @@
     font-weight: 400;
     line-height: 28px;
     text-align: center;
+
+    @media (width <=479px) {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
   }
 
   &__list {
@@ -35,6 +57,24 @@
       "a d f"
       "b d f"
       "b d f";
+
+    @media (width <=767px) {
+      min-height: 620px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      gap: 12px;
+      grid-template-areas:
+        "a d"
+        "a e"
+        "a e"
+        "b e"
+        "c f"
+        "c f";
+    }
+
+    @media (width <=479px) {
+      min-height: 480px;
+    }
   }
 
   &__item {
