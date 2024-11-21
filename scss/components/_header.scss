@@ -429,12 +429,28 @@
       &.active {
         transform: translateX(0);
       }
+
+      @media (width <=1023px) {
+        min-width: 30%;
+      }
+
+      @media (width <=787px) {
+        min-width: 50%;
+      }
+
+      @media (width <=479px) {
+        min-width: 100%;
+      }
     }
 
     &-item {
 
       &:not(:last-child) {
         margin-bottom: 75px;
+
+        @media (width <=787px) {
+          margin-bottom: 50px;
+        }
       }
     }
 
@@ -445,6 +461,10 @@
       line-height: 23px;
       text-transform: uppercase;
       transition: all .3s ease-in-out;
+
+      @media (width <=787px) {
+        font-size: 16px;
+      }
   
       &:focus {
         outline: none;

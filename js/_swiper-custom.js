@@ -11,6 +11,7 @@ let isDragging = false;
 let startPos = 0;
 let currentTranslate = 0;
 let prevTranslate = 0;
+let movedDistance = 0;
 
 const clonesBefore = slides.slice(-visibleSlides).map(slide => slide.cloneNode(true));
 const clonesAfter = slides.slice(0, visibleSlides).map(slide => slide.cloneNode(true));
@@ -69,19 +70,29 @@ function startDrag(event) {
     isDragging = true;
     startPos = event.pageX;
     prevTranslate = -currentSlide * slideWidth;
+    movedDistance = 0; // Сбрасываем расстояние
 }
 
 function drag(event) {
     if (!isDragging) return;
+
     const currentPosition = event.pageX;
     currentTranslate = prevTranslate + (currentPosition - startPos);
+    movedDistance = Math.abs(currentPosition - startPos); // Отслеживаем движение
     slidesContainer.style.transition = 'none';
     slidesContainer.style.transform = `translateX(${currentTranslate}px)`;
 }
 
-function endDrag() {
+function endDrag(event) {
     if (!isDragging) return;
     isDragging = false;
+
+    // Если движение меньше 10 пикселей, считаем это кликом и не прокручиваем
+    if (movedDistance < 10) {
+        updateSlider(currentSlide); // Возвращаем слайд в исходное положение
+        return;
+    }
+
     const movedBy = currentTranslate - prevTranslate;
 
     if (movedBy < -100) {
@@ -89,7 +100,7 @@ function endDrag() {
     } else if (movedBy > 100) {
         moveToPrevSlide();
     } else {
-        updateSlider(currentSlide);
+        updateSlider(currentSlide); // Возвращаем слайд в исходное положение
     }
 }
 

@@ -34,9 +34,9 @@
     &--black {
       color: var(--black-color);
 
-      @media (width <=1440px) {
-        margin-bottom: 865px;
-      }
+      // @media (width <=1440px) {
+      //   margin-bottom: 865px;
+      // }
     }
 
     &--white {
@@ -135,15 +135,10 @@
 
   .reserv__slider {
     position: relative;
-    // width: 1280px;
     height: 300px;
     overflow: hidden;
     margin-bottom: 900px;
     outline: none;
-
-    @media (width <=1440px) {
-      display: none;
-    }
   }
   
   .reserv__slides {
@@ -153,7 +148,7 @@
   }
   
   .reserv__slide {
-    flex: 0 0 31%;
+    min-width: 400px;
     height: 250px;
     background-size: cover;
     background-repeat: no-repeat;
