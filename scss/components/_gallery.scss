@@ -12,8 +12,8 @@
   &__title {
     margin: 0;
     margin-bottom: 40px;
-    font-size: 60px;
     font-weight: 700;
+    font-size: 60px;
     line-height: 150%;
     text-align: center;
 
@@ -22,8 +22,8 @@
     }
 
     @media (width <=479px) {
-      font-size: 40px;
       margin-bottom: 20px;
+      font-size: 40px;
     }
   }
 
@@ -32,44 +32,45 @@
     margin: 0 auto;
     margin-bottom: 70px;
     max-width: 510px;
-    color: var(--dark-color);
-    font-family: DM Sans;
-    font-size: 18px;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: "DM Sans";
     font-weight: 400;
+    font-size: 18px;
     line-height: 28px;
     text-align: center;
+    color: var(--dark-color);
 
     @media (width <=479px) {
-      font-size: 16px;
       margin-bottom: 20px;
+      font-size: 16px;
     }
   }
 
   &__list {
-    min-height: 770px;
+    grid-template:
+    "a c e"
+    "a c e"
+    "a d e"
+    "a d f"
+    "b d f"
+    "b d f";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    gap: 30px 30px;
-    grid-template-areas:
-      "a c e"
-      "a c e"
-      "a d e"
-      "a d f"
-      "b d f"
-      "b d f";
-
+    min-height: 770px;
+    gap: 30px;
+    
     @media (width <=767px) {
-      min-height: 620px;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(6, 1fr);
-      gap: 12px;
-      grid-template-areas:
+      grid-template:
         "a d"
         "a e"
         "a e"
         "b e"
         "c f"
         "c f";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      min-height: 620px;
+      gap: 12px;
     }
 
     @media (width <=479px) {
@@ -78,7 +79,6 @@
   }
 
   &__item {
-
     &--1 {
       grid-area: a;
     }
@@ -106,31 +106,37 @@
 
   &__photo {
     min-height: 100%;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
 
     &--1 {
+      /* stylelint-disable-next-line function-url-quotes */
       background-image: url(../img/reserv-img-1.webp);
     }
 
     &--2 {
+      /* stylelint-disable-next-line function-url-quotes */
       background-image: url(../img/reserv-img-2.webp);
     }
 
     &--3 {
+      /* stylelint-disable-next-line function-url-quotes */
       background-image: url(../img/reserv-img-3.webp);
     }
 
     &--4 {
+      /* stylelint-disable-next-line function-url-quotes */
       background-image: url(../img/reserv-img-4.webp);
     }
 
     &--5 {
+      /* stylelint-disable-next-line function-url-quotes */
       background-image: url(../img/reserv-img-5.webp);
     }
 
     &--6 {
+      /* stylelint-disable-next-line function-url-quotes */
       background-image: url(../img/reserv-img-6.webp);
     }
   }

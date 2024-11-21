@@ -2,9 +2,9 @@
   background-color: var(--black-color);
 
   &__container {
-    padding: 40px 30px;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px;
 
     @media (width <=1023px) {
       flex-direction: column;
@@ -16,19 +16,19 @@
   }
 
   &__logo {
-    height: 49px;
     margin-right: 125px;
+    height: 49px;
 
     &-text {
       flex-direction: column;
-      color: var(--white-color);
+      justify-content: center;
       font-family: var(--second-family);
-      font-size: 23.96px;
       font-weight: 900;
+      font-size: 23.96px;
       line-height: 80.5%;
       letter-spacing: 0.32px;
       text-transform: uppercase;
-      justify-content: center;
+      color: var(--white-color);
     }
 
     &-span {
@@ -40,10 +40,10 @@
     }
 
     @media (width <=767px) {
-      margin-right: 0;
-      min-height: 50px;
       justify-content: center;
+      margin-right: 0;
       margin-bottom: 30px;
+      min-height: 50px;
     }
   }
 
@@ -72,15 +72,19 @@
 
     &-social {
       height: 24px;
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
     }
   }
 
   &__link {
-    color: var(--white-color);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 28px;
     outline: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--white-color);
     transition: all .3s ease-in-out;
 
     &:focus {
@@ -97,10 +101,10 @@
   }
 
   &__authorship {
-    color: var(--white-color);
-    font-size: 18px;
     font-weight: 700;
+    font-size: 18px;
     line-height: 28px;
+    color: var(--white-color);
   }
 
   &__list-social {
@@ -113,12 +117,6 @@
 
     @media (width <=767px) {
       margin-bottom: 30px;
-    }
-  }
-
-  &__item-social {
-    &:not(:last-child) {
-      margin-right: 25px;
     }
   }
 
@@ -144,9 +142,9 @@
   }
 
   &__icon-social {
-    fill: var(--white-color);
     width: 24px;
     height: 24px;
+    fill: var(--white-color);
   }
 
   &__right {
@@ -159,9 +157,9 @@
 
   &__left {      
     @media (width <=1023px) {
-      width: 100%;
       justify-content: space-between;
       margin-bottom: 30px;
+      width: 100%;
     }
 
     @media (width <=767px) {

@@ -1,6 +1,6 @@
 .getting {
-  background-color: #DCE8F2;
   padding: 200px 30px;
+  background-color: #DCE8F2;
 
   @media (width <=1023px) {
     padding: 100px 30px;
@@ -13,8 +13,8 @@
   &__title {
     margin: 0;
     margin-bottom: 50px;
-    font-size: 60px;
     font-weight: 700;
+    font-size: 60px;
     line-height: 150%;
 
     @media (width <=767px) {
@@ -28,23 +28,23 @@
 
   &__subtitle {
     margin: 0;
-    font-size: 26.41px;
     font-weight: 700;
+    font-size: 26.41px;
     line-height: 41.08px;
 
     @media (width <=479px) {
+      margin-bottom: 20px;
       font-size: 22px;
       line-height: 30px;
-      margin-bottom: 20px;
     }
   }
 
   &__text {
     display: block;
-    color: rgba(21, 20, 57, 0.4);
-    font-size: 23.47px;
     font-weight: 400;
+    font-size: 23.47px;
     line-height: 38.15px;
+    color: rgba(21, 20, 57, 0.4);
 
     &--mb {
       margin-bottom: 90px;
@@ -59,9 +59,9 @@
     }
 
     @media (width <=479px) {
+      margin-bottom: 20px;
       font-size: 16px;
       line-height: 30px;
-      margin-bottom: 20px;
     }
   }
 
@@ -81,51 +81,51 @@
 
     &::before {
       position: absolute;
-      background-color: var(--red-color);
-      border-radius: 50px;
-      width: 60px;
-      height: 60px;
-      top: 0;
       left: 0;
+      top: 0;
+      z-index: 10;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--white-color);
-      font-size: 26.41px;
+      border-radius: 50px;
+      width: 60px;
+      height: 60px;
       font-weight: 500;
+      font-size: 26.41px;
       line-height: 38.15px;
-      z-index: 10;
+      color: var(--white-color);
+      background-color: var(--red-color);
 
       @media (width <=479px) {
         display: none;
       }
     }
 
-    &--1:before {
+    &--1::before {
       content: '1';
     }
 
-    &--2:before {
+    &--2::before {
       content: '2';
     }
 
-    &--3:before {
+    &--3::before {
       content: '3';
     }
 
-    &--4:before {
+    &--4::before {
       content: '4';
     }
 
     &--1::after {
-      position: absolute;
       content: "";
+      position: absolute;
+      left: 30px;
+      top: 0;
+      z-index: 0;
       width: 1px;
       height: 100%;
       background-color: rgba(21, 20, 57, 0.4);
-      top: 0;
-      left: 30px;
-      z-index: 0;
 
       @media (width <=479px) {
         display: none;
@@ -133,14 +133,14 @@
     }
 
     &--2::after {
-      position: absolute;
       content: "";
+      position: absolute;
+      left: 30px;
+      top: 0;
+      z-index: 0;
       width: 1px;
       height: 100%;
       background-color: rgba(21, 20, 57, 0.4);
-      top: 0;
-      left: 30px;
-      z-index: 0;
 
       @media (width <=479px) {
         display: none;
@@ -148,14 +148,14 @@
     }
 
     &--3::after {
-      position: absolute;
       content: "";
+      position: absolute;
+      left: 30px;
+      top: 0;
+      z-index: 0;
       width: 1px;
       height: 100%;
       background-color: rgba(21, 20, 57, 0.4);
-      top: 0;
-      left: 30px;
-      z-index: 0;
       opacity: 0;
       transition: opacity .3s ease-in-out;
 
@@ -165,17 +165,17 @@
     }
 
     &-hidden {
+      overflow: hidden;
+      padding: 0 0 0 100px;
       max-height: 0;
       opacity: 0;
-      overflow: hidden;
       transition: all .3s ease-in-out;
-      padding: 0 0 0 100px;
     }
   }
 
   &__img {
-    width: 250px;
     margin-right: 45px;
+    width: 250px;
 
     @media (width <=767px) {
       margin-right: 0;
@@ -185,16 +185,16 @@
   }
 
   &__btn {
-    min-width: 210px;
-    padding: 16px 24px;
     margin-left: 100px;
-    border-radius: 32px;
-    color: var(--white-color);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 150%;
-    background-color: var(--red-color);
     outline: none;
+    border-radius: 32px;
+    padding: 16px 24px;
+    min-width: 210px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--white-color);
+    background-color: var(--red-color);
     transition: all .3s ease-in-out;
 
     &:focus {
@@ -226,7 +226,6 @@
 }
 
 .show {
-  // height: auto;
   height: 80px;
   opacity: 1;
 }
