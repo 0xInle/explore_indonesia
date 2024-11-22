@@ -1,6 +1,6 @@
 // import './_components.js';
-import './_swiper.js';
-import './_swiper-custom.js';
+import './_headerSwiper.js';
+import './_reservSwiper.js';
 import './_accordeon.js';
 import './_search.js';
 import './_burger.js';
