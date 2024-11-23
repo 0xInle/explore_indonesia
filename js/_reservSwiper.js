@@ -1,4 +1,4 @@
-const reservSwiper = new Swiper('.reserv__swiper', {
+const reservSwiper = new Swiper('.reserv-swiper', {
     grabCursor: true,
     slidesPerView: 1,
     spaceBetween: 10,

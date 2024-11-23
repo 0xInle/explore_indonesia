@@ -129,20 +129,20 @@
       }
     }
   }
-}
 
-.reserv__swiper {
-  margin-bottom: 900px;
-  padding-bottom: 30px;
-}
-
-.reserv__swiper-img {
-  display: block;
-  max-width: 100%;
-  max-height: 266px;
-  object-fit: cover;
-
-  @media (width <=639px) {
-    width: 100%;
+  &-swiper {
+    margin-bottom: 900px;
+    padding-bottom: 30px;
+  }
+  
+  &__swiper-img {
+    display: block;
+    max-width: 100%;
+    max-height: 266px;
+    object-fit: cover;
+  
+    @media (width <=639px) {
+      width: 100%;
+    }
   }
 }

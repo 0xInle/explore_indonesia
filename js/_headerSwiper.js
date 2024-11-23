@@ -1,4 +1,4 @@
-const headerSwiper = new Swiper('.header__swiper', {
+const headerSwiper = new Swiper('.header-swiper', {
     loop: true,
     parallax: true,
     speed: 1000,
